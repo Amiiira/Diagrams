@@ -1,0 +1,18 @@
+@startuml BPMN-schema
+actor User as "Пользователь"
+actor System as "Система"
+
+User --> (Создание)
+User --> (Редактирование)
+User --> (Сохранение)
+User --> (Экпорт)
+
+System --> (Process BPMN Diagrams)
+System --> (Validate BPMN Diagram)
+
+(Создание) .down.> (Редактирование) :  Зависит от
+(Сохранение) .right.> (Экспорт) : Триггер
+
+@enduml
+
+
